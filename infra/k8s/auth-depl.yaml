@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: mwibutsa/auth
+          image: mwibutsa/auth:latest
           env:
             - name: JWT_KEY
               valueFrom:

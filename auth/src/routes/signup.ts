@@ -41,7 +41,7 @@ router.post(
     };
 
     // store it on session object
-    res.json(user);
+    res.status(201).json(user);
   },
 );
 

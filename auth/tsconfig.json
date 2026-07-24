@@ -4,7 +4,7 @@
     "moduleResolution": "Bundler",
     "target": "esnext",
     "lib": ["esnext"],
-    "types": ["node"],
+    "types": ["jest", "node"],
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
@@ -17,6 +17,8 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }

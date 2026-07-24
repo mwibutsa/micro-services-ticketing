@@ -15,3 +15,13 @@ build:
         manual:
           - dest: .
             src: "src/**/*.ts"
+    - image: mwibutsa/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.{ts,tsx}"
+          - dest: .
+            src: "public/**/*"

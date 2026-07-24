@@ -7,7 +7,7 @@ COPY .yarnrc.yml ./
 COPY package.json ./
 COPY yarn.lock ./
 # RUN yarn set version 4.17.1
-RUN yarn workspaces focus --production
+RUN yarn install
 COPY . .
 
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
