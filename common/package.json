@@ -1,6 +1,6 @@
 {
   "name": "@mwibutsa/common",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Shared package for the ticketing microservices project",
   "packageManager": "yarn@4.18.0",
   "scripts": {

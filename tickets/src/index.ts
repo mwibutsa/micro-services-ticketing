@@ -6,7 +6,7 @@ const start = async () => {
     if (!process.env.JWT_KEY) {
       throw new Error("JWT_KEY must be defined");
     }
-    await mongoose.connect("mongodb://auth-mongo-svc:27017/auth");
+    await mongoose.connect("mongodb://tickets-mongo-svc:27017/tickets");
     console.log("Connected to mongoDB");
     app.listen(3000, () => {
       console.log("Listening on port 3000 !!!!");

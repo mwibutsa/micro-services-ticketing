@@ -25,3 +25,11 @@ build:
             src: "src/**/*.{ts,tsx}"
           - dest: .
             src: "public/**/*"
+    - image: mwibutsa/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.ts"
