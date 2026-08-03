@@ -4,9 +4,9 @@ import { currentUserRouter } from "./routes/current-user";
 import { signUpRouter } from "./routes/signup";
 import { signOutRouter } from "./routes/signout";
 import { signInRouter } from "./routes/signin";
-import { errorHandler } from "./middlewares/error-handler";
+import { errorHandler } from "@mwibutsa/common";
 import cookieSession from "cookie-session";
-import { NotFoundError } from "./errors/not-found-error";
+import { NotFoundError } from "@mwibutsa/common";
 
 const app = express();
 

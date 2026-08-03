@@ -2,9 +2,10 @@ import { Router } from "express";
 import type { Request, Response } from "express";
 import { body } from "express-validator";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
+import { BadRequestError } from "@mwibutsa/common";
 import jwt from "jsonwebtoken";
-import { validateRequest } from "../middlewares/validate-request";
+import { validateRequest } from "@mwibutsa/common";
+
 const router = Router();
 
 router.post(
