@@ -3,29 +3,34 @@ import mongoose from "mongoose";
 import request from "./request";
 import type TestAgent from "supertest/lib/agent";
 import type { Test } from "supertest";
+import jwt from "jsonwebtoken";
 
 let mongo: any;
 
 declare global {
-  var signin: () => Promise<string[]>;
+  var signin: () => string[];
   var request: TestAgent<Test>;
 }
 
-global.signin = async () => {
-  const email = "test@test.com";
-  const password = "password";
+global.signin = () => {
+  // build a JWT payload. {id, email}
+  const payload = {
+    id: new mongoose.Types.ObjectId().toHexString(),
+    email: "test@test.com",
+  };
 
-  const response = await request
-    .post("/api/users/signup")
-    .send({ email, password })
-    .expect(201);
+  // create the JWT!
+  const token = jwt.sign(payload, process.env.JWT_KEY!);
 
-  const cookie = response.get("Set-Cookie");
-  if (!cookie) {
-    throw new Error("Expected cookie but got undefined.");
-  }
+  // build session object. {jwt: MY_JWT}
+  const session = { jwt: token };
 
-  return cookie;
+  // turn that session into JSON
+  const sessionJSON = JSON.stringify(session);
+
+  // Take JSON and encode it as base64
+  const base64 = Buffer.from(sessionJSON).toString("base64");
+  return [`session=${base64}`];
 };
 
 beforeAll(async () => {
