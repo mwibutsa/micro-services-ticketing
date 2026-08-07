@@ -27,6 +27,7 @@
     "express-validator": "^7.3.2",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.7.4",
+    "node-nats-streaming": "^0.3.2",
     "tsx": "^4.23.1",
     "typescript": "^5.4.5"
   },
