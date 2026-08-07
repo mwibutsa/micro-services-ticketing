@@ -9,3 +9,10 @@ export { errorHandler } from "./middlewares/error-handler";
 export { requireAuth } from "./middlewares/require-auth";
 export { validateRequest } from "./middlewares/validate-request";
 export { User } from "./types/user";
+
+// Events
+export * from "./events/base-listener";
+export * from "./events/base-publisher";
+export * from "./events/subjects";
+export * from "./events/ticket-created-event";
+export * from "./events/ticket-updated-event";
